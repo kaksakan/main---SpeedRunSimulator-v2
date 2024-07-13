@@ -1,0 +1,173 @@
+if game.PlaceId == 5293755937 then
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Kak.Hub Speed Run Simulator Script", "DarkTheme")
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Main")
+
+Section:NewButton("Auto Collect Orbs", "Click to collect all orbs", function()
+    while true do
+        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        for i, v in pairs(game:GetService("Workspace").GameAssets.GlobalAssets.OrbSpawns:GetChildren()) do
+        if v:IsA("MeshPart") then
+        rootPart.CFrame = v.CFrame wait(0.2)
+        end
+        end
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+            Title = "Wait 10 Seconds";
+            Text  = "";
+            Icon  = "rbxthumb://type=Asset&id=17328930447&w=150&h=150"})
+        Duration = 10;
+        wait(10)
+
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+            Title = "Restarting";
+            Text  = "";
+            Icon  = "rbxthumb://type=Asset&id=17328930447&w=150&h=150"})
+    end
+end)
+
+
+Section:NewButton("Give Free Pet", "Click to get free pet", function()
+    local args = {
+        [1] = "Earth Butterfly",
+        [2] = false
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CanBuyEgg:InvokeServer(unpack(args))
+
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Check Your İnventory!";
+        Text  = "You bought a Pet";
+        Icon  = "rbxthumb://type=Asset&id=17328930447&w=150&h=150"})
+    Duration = 10;
+
+end)
+
+Section:NewButton("İnfinite Speed", "Click for infinite speed", function()
+    while true do
+        game:GetService("ReplicatedStorage").Remotes.AddSpeed:FireServer()
+        wait(0.1)    
+    end
+        
+end)
+
+Section:NewButton("Auto Rebirth", "Click for auto rebirth", function()
+    while true do
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Rebirth"):FireServer()
+        Wait(10)
+    end
+end)
+
+local Tab = Window:NewTab("Eggs")
+local Section = Tab:NewSection("Eggs")
+
+Section:NewButton("Egg 1 ", "Click to open Egg 1", function()
+    local args = {
+        [1] = "EggOne",
+        [2] = false
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CanBuyEgg"):InvokeServer(unpack(args))
+    
+end)
+
+Section:NewButton("Egg 2", "CLick to open Egg 2", function()
+    local args = {
+        [1] = "EggTwo",
+        [2] = false
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CanBuyEgg"):InvokeServer(unpack(args))
+end)
+
+Section:NewButton("Egg 3", "CLick to open Egg 3", function()
+    local args = {
+        [1] = "EggThree",
+        [2] = false
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CanBuyEgg"):InvokeServer(unpack(args))
+end)
+
+local Tab = Window:NewTab("Islands")
+local Section = Tab:NewSection("Islands")
+
+Section:NewButton("Main Island", "Click to teleport to the Main Island", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1356.80591, 198.375839, -454.130951, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+Section:NewButton("Dessert", "Click to teleport to the Dessert", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2246.6084, 196.784058, -644.539734, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+Section:NewButton("Ice Land", "Click to teleport to the Ice Land", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3122.04785, 198.084061, -645.99707, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+Section:NewButton("Magma", "Click to teleport to the Magma", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4347.01172, 198.084061, -645.99707, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+Section:NewButton("Graveyard", "Click to teleport to the Graveyard", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5481.88672, 198.449844, -645.99707, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+Section:NewButton("Heaven", "Click to teleport to the Heaven", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6478.51367, 199.378113, -631.980652, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+Section:NewButton("Candyland", "Click to teleport to the Candyland", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7636.02148, 198.178116, -677.389648, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+Section:NewButton("Space", "Click to teleport to the Space", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8815.02148, 198.178116, -677.389648, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+Section:NewButton("Ocean Sea", "Click to teleport to the Ocean Sea", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9992.06543, 198.178116, -619.874084, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+Section:NewButton("Adventure", "Click to teleport to the Adventure", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(11130.3076, 198.202866, -619.704163, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("Player")
+
+Section:NewTextBox("WalkSpeed", "Change your WalkSpeed", function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+end)
+
+Section:NewTextBox("JumpPower", "Change your JumpPower", function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+end)
+
+local Tab = Window:NewTab("Others")
+local Section = Tab:NewSection("Credits and Others")
+
+Section:NewLabel("By Kaksakan")
+
+Section:NewButton("My Discord Server", "Click to copy my Discord Server link", function()
+    setclipboard("https://discord.gg/tNf6Fsvk")
+    print(Copied)
+end)
+
+Section:NewKeybind("On - Off Uİ", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+Section:NewButton("Mobile Keybord", "Use this if u are on MOBİLE", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+
+end)
+
+else
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Speed Run Simulator Script",
+        Text = "Please join the Speed Run Simulator"
+    })
+end
